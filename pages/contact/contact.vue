@@ -2,7 +2,7 @@
   <view class="contact">
     <image src="https://api-hmugo-web.itheima.net/pyg/banner1.png" class="image"></image>
     <view class="info">
-      <view>联系电话：400-818-1233（点击拨打）</view>
+      <view @click="phone">联系电话：400-818-1233（点击拨打）</view>
       <view>联系地址：中国四川省成都市青羊区骡马市天府广场</view>
     </view>
     <map :latitude="latitude" :longitude="longitude" class="map" :markers="markers" :scale="scale"></map>
@@ -27,6 +27,11 @@
       }
     },
     methods: {
+      phone(){
+        uni.makePhoneCall({
+          phoneNumber:'12345678910'
+        })
+      }
 
     }
   }
