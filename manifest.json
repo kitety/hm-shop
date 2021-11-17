@@ -91,6 +91,13 @@
     "h5" : {
         "uniStatistics" : {
             "enable" : true
+        },
+        "sdkConfigs" : {
+            "maps" : {
+                "qqmap" : {
+                    "key" : ""
+                }
+            }
         }
     },
     "mp-kuaishou" : {
