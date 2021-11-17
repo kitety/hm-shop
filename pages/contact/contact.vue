@@ -5,7 +5,7 @@
       <view>联系电话：400-818-1233（点击拨打）</view>
       <view>联系地址：中国四川省成都市青羊区骡马市天府广场</view>
     </view>
-    <map :latitude="104.07231" :longitude="30.663467"></map>
+    <map :latitude="latitude" :longitude="longitude" class="map" :markers="markers" :scale="scale"></map>
 
   </view>
 </template>
@@ -14,7 +14,16 @@
   export default {
     data() {
       return {
-
+        latitude: 30.657456,
+        longitude: 104.066771,
+        scale: 20,
+        markers: [{
+          latitude: 30.657456,
+          longitude: 104.066771,
+          iconPath: '../../static/logo.png',
+          width: 30,
+          height: 30
+        }]
       }
     },
     methods: {
