@@ -15,17 +15,24 @@
         "enablePullDownRefresh": true
       }
 
+    },{
+      "path": "pages/goods/goods",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": true
+      }
+
     }, {
       "path": "pages/video/video",
       "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
+        "enablePullDownRefresh": false,
+        "navigationBarTitleText": ""
       }
 
     }, {
       "path": "pages/pics/pics",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "社区图片",
         "enablePullDownRefresh": false
       }
 

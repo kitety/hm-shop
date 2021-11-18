@@ -11,12 +11,14 @@
   export default {
     data() {
       return {
+        query: '',
         pageNum: 1,
         goods: [],
         total: 0
       }
     },
-    onLoad() {
+    onLoad(data) {
+      this.query = data.query || ''
       this.getGoodsData()
     },
     components: {
@@ -31,8 +33,12 @@
     methods: {
       // 获取商品数据
       async getGoodsData() {
+        uni.showLoading({
+          title: '数据加载中'
+        })
         const data = {
-          pagenum: this.pageNum
+          pagenum: this.pageNum,
+          query: this.query,
         }
         const res = await this.$myRequest({
           url: `/api/public/v1/goods/search?${qs.stringify(data)}`,
@@ -40,6 +46,7 @@
         this.goods = this.goods.concat(res.data.message.goods);
         this.total = res.data.message.total
         uni.stopPullDownRefresh()
+        uni.hideLoading()
       },
 
     },
@@ -69,6 +76,7 @@
     .bottom-line {
       text-align: center;
       margin-top: 8rpx;
+      padding-bottom: 8rpx;
       color: #ccc;
     }
   }
