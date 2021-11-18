@@ -1,6 +1,6 @@
 <template>
   <view class="goods_list">
-    <view class="goods_item" v-for="item in goods" :key="item.goods_id">
+    <view class="goods_item" v-for="item in goods" :key="item.goods_id" @click="goToDetail(item.goods_id)">
       <image :src="item.goods_big_logo"></image>
       <view class="price">
         <text>￥{{item.goods_price}}</text>
@@ -15,7 +15,12 @@
 
 <script>
   export default {
-    props: ['goods']
+    props: ['goods'],
+    methods: {
+      goToDetail(id) {
+        this.$emit('goToDetail', id)
+      }
+    }
   }
 </script>
 

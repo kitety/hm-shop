@@ -1,6 +1,6 @@
 <template>
   <view class="goods">
-    <goods-list :goods="goods"></goods-list>
+    <goods-list :goods="goods" @goToDetail="goGoodsDetail"></goods-list>
     <view v-if="noMoreData" class="bottom-line">----我是有底线的----</view>
   </view>
 </template>
@@ -48,6 +48,12 @@
         uni.stopPullDownRefresh()
         uni.hideLoading()
       },
+      // 跳转到商品详情页
+      goGoodsDetail(goods_id) {
+        uni.navigateTo({
+          url: `../goods-detail/goods-detail?${qs.stringify({goods_id})}`
+        })
+      }
 
     },
     // 触底更新

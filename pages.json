@@ -15,7 +15,7 @@
         "enablePullDownRefresh": true
       }
 
-    },{
+    }, {
       "path": "pages/goods/goods",
       "style": {
         "navigationBarTitleText": "",
@@ -40,6 +40,13 @@
       "path": "pages/contact/contact",
       "style": {
         "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+
+    }, {
+      "path": "pages/goods-detail/goods-detail",
+      "style": {
+        "navigationBarTitleText": "商品详情",
         "enablePullDownRefresh": false
       }
 

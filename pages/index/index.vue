@@ -21,13 +21,14 @@
       <view class="title">
         推荐商品
       </view>
-      <goods-list :goods="goods"></goods-list>
-     
+      <goods-list :goods="goods" @goToDetail="goGoodsDetail"></goods-list>
+
     </view>
   </view>
 </template>
 
 <script>
+  import qs from 'qs'
   import goodsList from '../../components/goods-list/goods-list.vue'
   export default {
     data() {
@@ -57,8 +58,8 @@
       this.getSwipeData()
       this.getGoodsData()
     },
-    components:{
-      "goods-list":goodsList
+    components: {
+      "goods-list": goodsList
     },
     methods: {
       // 获取轮播图数据
@@ -81,6 +82,12 @@
         console.log(url)
         uni.navigateTo({
           url
+        })
+      },
+      // 跳转到商品详情页
+      goGoodsDetail(goods_id) {
+        uni.navigateTo({
+          url: `../goods-detail/goods-detail?${qs.stringify({goods_id})}`
         })
       }
     }
